@@ -103,3 +103,23 @@ client.set_event_callback("setup_command", function()
         end
     end
 end)
+
+client.set_event_callback("player_death", function(e)
+    local ent = client.userid_to_entindex(e.userid)
+
+    if (ent == localPlayer) then
+        trailCache = {}
+    end
+end)
+
+client.set_event_callback("player_connect_full", function(e)
+    local ent = client.userid_to_entindex(e.userid)
+
+    if (ent == localPlayer) then
+        trailCache = {}
+    end
+end)
+
+client.set_event_callback("cs_win_panel_round", function()
+    trailCache = {}
+end)
