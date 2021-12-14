@@ -120,6 +120,6 @@ client.set_event_callback("player_connect_full", function(e)
     end
 end)
 
-client.set_event_callback("cs_win_panel_round", function()
+client.set_event_callback("round_start", function()
     trailCache = {}
 end)
